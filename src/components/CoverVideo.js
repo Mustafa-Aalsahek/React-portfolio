@@ -31,9 +31,27 @@ const Title = styled.div`
   z-index: 5;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: ${(props) => props.theme.text};
+
+  div {
+    display: flex;
+    flex-direction: row;
+  }
+  h1 {
+    font-family: "Kaushan Script";
+    font-size: ${(props) => props.theme.fontBig};
+    text-shadow: 5px 5px 5px ${(props) => props.theme.body};
+  }
+  h2 {
+    font-family: "Sirin Stencil";
+    font-size: ${(props) => props.theme.fontlg};
+    text-shadow: 2px 2px 2px ${(props) => props.theme.body};
+    font-weight: 300;
+    text-transform: capitalize;
+  }
 `;
 
 const CoverVideo = () => {
@@ -42,7 +60,18 @@ const CoverVideo = () => {
       <DarkOverlay />
       <Title>
         <div>
-          <h1>Mustafa</h1>
+          <h1 data-scroll data-scroll-delay="0.13" data-scroll-speed="4">
+            Mus
+          </h1>
+          <h1 data-scroll data-scroll-delay="0.11" data-scroll-speed="4">
+            ta
+          </h1>
+          <h1 data-scroll data-scroll-delay="0.12" data-scroll-speed="4">
+            fa
+          </h1>
+          <h2 data-scroll data-scroll-delay="0.11" data-scroll-speed="2">
+            Inspire. Create. Belive
+          </h2>
         </div>
       </Title>
       <video src={MainVideo} type="video/mp4" autoPlay muted loop />
