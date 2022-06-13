@@ -12,6 +12,11 @@ const Container = styled.div`
   color: ${(props) => props.theme.text};
   z-index: 5;
 
+  a {
+    display: flex;
+    align-items: flex-end;
+  }
+
   svg {
     width: 4rem;
     height: auto;
@@ -26,6 +31,29 @@ const Container = styled.div`
     }
   }
 `;
+const Text = styled(motion.span)`
+  font-size: ${(props) => props.theme.fontlg};
+  color: ${(props) => props.theme.text};
+  padding: 0.5rem;
+`;
+
+const textVariants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+
+  visible: {
+    opacity: 1,
+    x: -5,
+
+    transition: {
+      delay: 2,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const pathVariants = {
   hidden: {
     opacity: 0,
@@ -64,6 +92,9 @@ const Logo = () => {
             />
           </g>
         </svg>
+        <Text variants={textVariants} initial="hidden" animate="visible">
+          MUSTAFA
+        </Text>
       </Link>
     </Container>
   );
